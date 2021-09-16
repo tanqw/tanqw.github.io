@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="设计模式, Tan">
+    <meta name="keywords" content="爬虫爬取淘宝商品信息, Tan">
     <meta name="description" content="Justice may be late, but will never be absent.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>设计模式 | Tan</title>
+    <title>爬虫爬取淘宝商品信息 | Tan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">设计模式</h1>
+                    <h1 class="description center-align post-title">爬虫爬取淘宝商品信息</h1>
                 </div>
             </div>
         </div>
@@ -442,12 +442,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                                <span class="chip bg-color">设计模式</span>
+                            <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">爬虫</span>
                             </a>
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B7%98%E5%AE%9D/">
+                                <span class="chip bg-color">淘宝</span>
                             </a>
                         
                     </div>
@@ -458,8 +462,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                设计模式
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                爬虫
+                            </a>
+                        
+                            <a href="/categories/%E7%88%AC%E8%99%AB/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -485,14 +493,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    5 分
                 </div>
                 
 
@@ -515,154 +523,167 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<h1 id="设计模式学习笔记"><a href="#设计模式学习笔记" class="headerlink" title="设计模式学习笔记"></a>设计模式学习笔记</h1></blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li><p>同一个类的不同对象的Hash Code不同</p>
-</li>
-<li><p>形容词用接口，名词用抽象类</p>
-</li>
-<li><p>设计模式常用的七大原则</p>
-<ol>
-<li><p><strong>单一职责原则：控制类的颗粒度大小、将对象解耦、提高其内聚性</strong></p>
-<p><strong>基本介绍</strong></p>
-<p>对类来说，即一个类应该只负责意向职责。</p>
-<p><strong>注意事项和细节</strong></p>
-<ol>
-<li>降低类的复杂度，一个类只负责一项职责</li>
-<li>提高类的可读性、可维护性</li>
-<li>降低变更引起的风险</li>
-<li>通常情况下，我们应当遵守单一职责原则，只有逻辑足够简单，才可以在代码级违反单一职责原则；只有类中方法数量足够少，可以在方法级别保持单一职责原则</li>
-</ol>
-</li>
-<li><p><strong>接口隔离原则：要为各个类建立它们需要的专用接口</strong></p>
-<p><strong>基本介绍</strong></p>
-<p>客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应该建立在最小的接口上</p>
-<p><strong>应传统方法的问题和使用接口隔离原则改进</strong></p>
-<ol>
-<li>类A通过接口interface1依赖类B，类C通过接口interfa1依赖类D，如果接口interface1对于类A和类C来说不是最小接口，那么类B和类D必须去实现他们不需要的方法</li>
-<li>将接口interface1拆分为独立的几个接口，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则</li>
-<li>接口interface1中出现的方法，根据实际情况拆分为三个接口</li>
-<li>代码实现</li>
-</ol>
-<p><img src="https://gitee.com/tan2511217211/PicBed/raw/master/images/image-20210829095930685.png" alt="image-20210829095930685"></p>
-</li>
-<li><p><strong>依赖倒转原则：要面向接口编程，不要面向实现编程</strong></p>
-<ol>
-<li>高层模块不应该依赖低层模块，二者都应该依赖其抽象</li>
-<li>抽象不应该依赖细节，细节应该依赖抽象</li>
-<li>依赖倒转（倒置）的中心思想是面向接口编程</li>
-<li>依赖倒转原则是基于这样的设计理念：相对于细节的多变性，抽象的东西要稳定的多。以抽象为基础搭建的架构比以细节为基础的架构要稳的多。在Java中，抽象指的是接口或抽象类，细节就是具体的实现类</li>
-<li>使用接口或抽象类的目的是制定好规范，而不涉及任何具体的操作，把展现细节的任务交给他们的实现类去完成</li>
-</ol>
-<p><img src="https://gitee.com/tan2511217211/PicBed/raw/master/images/image-20210829102317701.png" alt="image-20210829102317701.png"></p>
-<p><img src="https://gitee.com/tan2511217211/PicBed/raw/master/images/image-20210829102400935.png" alt="image-20210829102400935"></p>
-<p><img src="https://gitee.com/tan2511217211/PicBed/raw/master/images/image-20210829102515810.png" alt="image-20210829102515810"></p>
-</li>
-<li><p><strong>里氏替换原则：继承必须确保超类所拥有的性质在子类中仍然成立</strong></p>
-<p><strong>OO中的继承性的思考和说明</strong></p>
-<ol>
-<li>继承包含这样一层含义：父类中凡是已经实现好的方法，实际上是在设定规范和契约，虽然它不强制要求所有的子类必须遵循这些契约，但是如果子类对这些已经实现的方法任意修改，就会对整个继承体系造成破坏。</li>
-<li>继承在给程序设计带来便利的同时，也带来了弊端。比如原来使用继承会给其他程序带来侵入性，程序的可移植性降低，增加对象间的耦合性，如果一个类被其他的类所继承，则当这个类需要修改时，必须考虑到所有的子类，并且父类修改后，所有涉及到子类的功能都有可能产生故障。</li>
-<li>问题提出：在编程中，如何正确的使用继承？——————————————————&gt;里氏替换原则</li>
-</ol>
-<p><strong>里氏替换原则基本介绍</strong></p>
-<ol>
-<li>里氏替换原则在1988年，有麻省理工学院的一位姓里的女士提出的。</li>
-<li>如果对每个类型为T1的对象O1，都有类型为T2的对象O2，使得以T1定义的所有程序P在所有的对象O1都代换成O2时，程序P的行为没有发生变化，那么类型T2是类型T1的子类型。换句换说，所有引用基类的地方必须能透明地使用其子类的对象。</li>
-<li>在使用继承时，遵循里氏替换原则，在子类中尽量不要重写父类的方法。</li>
-<li>里氏替换原则告诉我们，继承实际上让两个类的耦合性增强了，在适当的情况下，可以通过聚合，组合，依赖来解决问题。</li>
-</ol>
-</li>
-<li><p><strong>开闭原则(Open Closed Principle):对扩展开放，对修改关闭</strong></p>
-<p><strong>基本介绍</strong></p>
-<ol>
-<li>是编程中最基础、最重要的设计原则</li>
-<li>一个软件实体如类，模块和函数应该对扩展开放(对提供方)，对修改关闭(对使用方)。用抽象构建框架，用实现扩展细节</li>
-<li>当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化</li>
-<li>编程中遵循其它原则，以及使用设计模式的目的就是遵循开闭原则</li>
-</ol>
-</li>
-<li><p><strong>迪米特法则：只跟你的直接朋友交谈，不跟“陌生人”说话</strong></p>
-<p><strong>基本介绍</strong></p>
-<ol>
-<li>一个对象应该对其他对象保持最少的了解</li>
-<li>类与类关系越密切，耦合度越大</li>
-<li>迪米特法则(Demeter Principle)又叫最少知道原则，即一个类对自己依赖的类知道的越少越好。也就是说，对于被依赖的类不管多么复杂，都尽量将逻辑封装在类的内部。对外除了提供的public 方法，不对外泄露任何信息</li>
-<li>迪米特法则还有个更简单的定义：只与直接的朋友通信</li>
-<li>直接的朋友：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。耦合的方式很多，依赖，关联，组合，聚合等。其中，我们称出现成员变量，方法参数，方法返回值中的类为直接的朋友，而出现在局部变量中的类不是直接的朋友。也就是说，陌生的类最好不要以局部变量的形式出现在类的内部</li>
-</ol>
-<p><strong>迪米特法则注意事项和细节</strong></p>
-<ol>
-<li>迪米特法则的核心是降低类之间的耦合</li>
-<li>但是注意：由于每个类都减少了不必要的依赖，因此迪米特法则只是要求降低类间(对象间)耦合关系，并不是要求完全没有依赖关系</li>
-</ol>
-</li>
-<li><p><strong>合成复用原则：尽量先使用组合或者聚合等关联关系来实现，其次才考虑使用继承关系来实现</strong></p>
-<p><strong>基本介绍</strong></p>
-<p>原则是尽量使用合成/聚合的方式，而不是使用继承</p>
-<p><img src="https://gitee.com/tan2511217211/PicBed/raw/master/images/image-20210912221606552.png" alt="image-20210912221606552"></p>
-</li>
-</ol>
-</li>
-<li><p><strong>设计原则核心思想</strong></p>
-<ol>
-<li>找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起</li>
-<li>针对接口编程，而不是针对实现编程</li>
-<li>为了交互对象之间的松耦合设计而努力</li>
-</ol>
-</li>
-<li><p><strong>UML基本介绍</strong></p>
-<ol>
-<li>UML(Unified modeling language UML) 统一建模语言，是一种用于软件系统分析和设计的语言工具，它用于帮助软件开发人员进行思考和记录思路的结果</li>
-<li>UML本身是一套符号的规定，就像数学符号和化学符号一样，这些符号用于描述软件模型中的各个元素和他们之间的关系，比如类、接口、实现、泛化、依赖、组合、聚合等</li>
-<li>使用UML来建模，常用的工具有Rational Rose , 也可以使用一些插件来建模</li>
-</ol>
-</li>
-</ul>
-<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><ul>
-<li>单例：单个实例</li>
-<li>应用场景：只需要一个实例存在（如：各种manager，各种factory等）</li>
-<li>保证实例在内存中只有一个实例定义一个static final 实例 INSTANCE；例如（private static final Mgr01 INSTANCE = new Mgr01();）</li>
-<li>注意：单例模式需要防止反序列化（Java的反射可以通过实例.class漏到内存中，然后再new一个实例出来，enum可以防止反序列化，能防止的原因是因为enum没有构造方法，就算拿到class文件也无法构造对象，它的反序列化返回的只是一个（INSTANCE）值）</li>
-</ul>
-<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><ul>
-<li><p>策略模式封装的是做一件事情时不同的执行方式</p>
-<p><img src="https://gitee.com/tan2511217211/PicBed/raw/master/images/image-20210717181341796.png" alt="策略模式类图"></p>
-</li>
-</ul>
-<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><ul>
-<li>工厂：任何可以产生对象的方法或类，都可以称之为工厂</li>
-<li>单例也是一种工厂</li>
-<li>为什么有了new之后，还要有工厂？<ul>
-<li>灵活控制生产过程</li>
-<li>权限、修饰、日志…</li>
-</ul>
-</li>
-<li>工厂分类：<ol>
-<li>简单工厂</li>
-<li>静态工厂</li>
-<li>工厂方法FactoryMethod<ul>
-<li>产品维度扩展</li>
-</ul>
-</li>
-<li>抽象工厂<ul>
-<li>产品一族扩展</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="门面与调停者"><a href="#门面与调停者" class="headerlink" title="门面与调停者"></a>门面与调停者</h3><ul>
-<li>facade门面：要和系统中的多个类打交道，还必须理解这多个类之前的关系，太麻烦了，可以直接把这些错综复杂关系的类用一个Facade门面封装起来，就是对外的一个门面，调用者只需要和这个门面打交道即可。</li>
-<li>mediator调停者：部门内部打交道。每个类之间都不要互相打交道了，都通过一个调停者来交互。</li>
-</ul>
-<h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><ul>
-<li>装饰器设计模式</li>
-</ul>
-<img src="C:\Users\tan25\AppData\Roaming\Typora\typora-user-images\image-20210814125156218.png" alt="image-20210814125156218">
+                <h2 id="爬虫爬取淘宝商品信息"><a href="#爬虫爬取淘宝商品信息" class="headerlink" title="爬虫爬取淘宝商品信息"></a>爬虫爬取淘宝商品信息</h2><p>前面已经写过一篇获取淘宝信息的文章，但是那篇文章并没有获取商品详情页下面的信息，也没有数据保存功能，这篇文章就是在上篇文章上增加了商品详情页信息的获取和数据保存为xls文件，原理和上一篇文章一样，故不做过多介绍，想看看原理的请看上一篇博客，博客传送门<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43764365/article/details/103539728">爬虫爬取京东和淘宝商品信息</a>。不明白的老规矩，评论区留言讨论或者加QQ2511217211（加Q请备注讨论，否则不予通过）。<br>代码如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"># coding=UTF-8
+from selenium import webdriver
+from time import sleep
+import random
+import re
+import os
+import xlrd
+import xlwt
+from xlutils.copy import copy
 
-<p><img src="https://gitee.com/tan2511217211/PicBed/raw/master/images/image-20210814125326725.png" alt="image-20210814125326725"></p>
+
+# 获取页码
+def search_products():
+    driver.find_element_by_xpath('//*[@id="q"]').send_keys(keyword)
+    driver.find_element_by_xpath('//*[@id="J_TSearchForm"]/div[1]/button').click()
+    sleep(60)
+    token = driver.find_element_by_xpath('//*[@id="mainsrp-pager"]/div/div/div/div[1]').text
+    # 0代表所有匹配到的数字
+    token = int(re.compile('(\d+)').search(token).group(1))
+    return token
+
+
+# 下拉下滑条，加载数据
+def drop_down():
+    for x in range(1, 11, 2):
+        sleep(1)
+        j = x / 10
+        js = 'document.documentElement.scrollTop = document.documentElement.scrollHeight * %f' % j
+        driver.execute_script(js)
+
+
+# 获取商品信息
+def get_product(page):
+    oldHandle = driver.window_handles
+    lis = driver.find_elements_by_xpath('//div[@class="items"]/div[@class="item J_MouserOnverReq  "]')
+    for i in range(len(lis)):
+        print("获取第{}页第{}条中...".format(page, i + 1))
+        li = driver.find_elements_by_xpath('//div[@class="items"]/div[@class="item J_MouserOnverReq  "]')[i]
+        sales = ''
+        # 商品信息
+        info = li.find_element_by_xpath('.//div[@class="row row-2 title"]').text
+        # 价格
+        price = li.find_element_by_xpath('.//a[@class="J_ClickStat"]').get_attribute('trace-price')
+        # 付款人数
+        deal = li.find_element_by_xpath('.//div[@class="deal-cnt"]').text
+        # 只留数字,便于数据分析
+        deal = int(re.compile('(\d+)').search(deal).group(1))
+        # 封面图片地址
+        image = li.find_element_by_xpath('.//div[@class="pic"]/a/img').get_attribute('src')
+        # 商家名称
+        name = li.find_element_by_xpath('.//div[@class="shop"]/a/span[2]').text
+        # 商家地址
+        site = li.find_element_by_xpath('.//div[@class="location"]').text
+        # 详情页地址
+        href = li.find_element_by_xpath('.//a[@class="J_ClickStat"]').get_attribute('href')
+        li.click()
+        handles = driver.window_handles
+        handle = list(set(oldHandle) ^ set(handles))
+        oldHandle = list(set(oldHandle) &amp; set(handles))
+        driver.switch_to.window(handle[0])
+        storeType = href[8:].split('/')[0]
+        if storeType == 'detail.tmall.com':
+            # 店铺在天猫上
+            sales = driver.find_element_by_xpath(
+                '//*[@id="J_DetailMeta"]/div[1]/div[1]/div/ul/li[1]/div/span[2]').text
+        elif storeType == 'item.taobao.com':
+            # 店铺在淘宝上
+            sales = driver.find_element_by_xpath('//*[@id="J_SellCounter"]').text
+        else:
+            # 既不是天猫也不是淘宝直接跳过
+            pass
+        # 月销量
+        sales = int(re.compile('(\d+)').search(sales).group(1))
+        # 月销额
+        monthlySales = sales * float(price)
+        flag = MakeRandomNumbers(1, 100)
+        if flag % 3 == 0 or flag % 8 == 0:
+            drop_down()
+        # 随机睡眠10~20秒,接口有防盗刷
+        markAmount = MakeRandomNumbers(i, len(lis)) % 10
+        sleep(MakeRandomNumbers(5 * markAmount, 20 * markAmount))
+        driver.close()
+        driver.implicitly_wait(10)
+        driver.switch_to.window(oldHandle[0])
+        value = [[info, price, deal, name, site, sales, monthlySales], ]
+        write_excel_xls_append(book_name_xls, value)
+        # print(info, price, deal, name, site, sales, monthlySales, image, sep='|')
+
+
+# 生成随机数
+def MakeRandomNumbers(a, b):
+    return random.randint(a, b)
+
+
+# 随机休眠
+def dormancy(a, b):
+    sleep(random.randint(a, b))
+
+
+# 翻页
+def next_page():
+    token = search_products()
+    num = 0
+    while num != token:
+        dormancy(60, 120)  # 随机休眠一到两分钟
+        driver.get('https://s.taobao.com/search?q={}&amp;s={}'.format(keyword, 44 * num))
+        driver.implicitly_wait(10)
+        num += 1
+        drop_down()
+        get_product(num)
+
+
+# 创建Excel数据表并写入表头数据
+def write_excel_xls_head(path, sheet_name, value):
+    index = len(value)  # 获取需要写入数据的行数
+    workbook = xlwt.Workbook()  # 新建一个工作簿
+    sheet = workbook.add_sheet(sheet_name)  # 在工作簿中新建一个表格
+    for i in range(0, index):
+        for j in range(0, len(value[i])):
+            sheet.write(i, j, value[i][j])  # 像表格中写入数据（对应的行和列）
+    workbook.save(path)  # 保存工作簿
+    print("表头写入成功！")
+
+
+# 写入表格数据
+def write_excel_xls_append(path, value):
+    index = len(value)  # 获取需要写入数据的行数
+    workbook = xlrd.open_workbook(path)  # 打开工作簿
+    sheets = workbook.sheet_names()  # 获取工作簿中的所有表格
+    worksheet = workbook.sheet_by_name(sheets[0])  # 获取工作簿中所有表格中的的第一个表格
+    rows_old = worksheet.nrows  # 获取表格中已存在的数据的行数
+    new_workbook = copy(workbook)  # 将xlrd对象拷贝转化为xlwt对象
+    new_worksheet = new_workbook.get_sheet(0)  # 获取转化后工作簿中的第一个表格
+    for i in range(0, index):
+        for j in range(0, len(value[i])):
+            new_worksheet.write(i + rows_old, j, value[i][j])  # 追加写入数据，注意是从i+rows_old行开始写入
+    new_workbook.save(path)  # 保存工作簿
+
+
+if __name__ == "__main__":
+    book_name_xls = '淘宝商品数据.xls'
+    sheet_name_xls = '商品数据表'
+    value_title = [["商品信息", "价格", "付款人数", "商家名称", "商家地址", "月销量", "月销金额"], ]
+    write_excel_xls_head(book_name_xls, sheet_name_xls, value_title)
+
+    driver_path = os.path.abspath(os.path.join(os.getcwd(), ".")) + "/dr/chromedriver.exe"
+    keyword = input('输入你想查找的商品名字:')
+    options = webdriver.ChromeOptions()
+    # options.add_argument("--no-sandbox")
+    # options.add_argument('lang=zh_CN.UTF-8')
+    options.add_argument('--start-maximized')
+    # options.add_argument("--headless") 无界面模式 options.add_argument('user-agent="Mozilla/5.0 (Windows NT 10.0; Win64;
+    # x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"')
+    # options.add_experimental_option("prefs", {"profile.managed_default_content_settings.images": 2})  # 不加载图片,加快访问速度
+    options.add_experimental_option('excludeSwitches', ['enable-automation'])  # 此步骤很重要，设置为开发者模式，防止被各大网站识别出来使用了Selenium
+    driver = webdriver.Chrome(executable_path=driver_path, options=options)
+    driver.get('https://www.taobao.com/')
+    next_page()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>保存的数据文件截图<br><img src="https://img-blog.csdnimg.cn/20210531112941554.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzY0MzY1,size_16,color_FFFFFF,t_70" alt="数据"><br>文章只是一种学习方法，效率不是很高，要追求效率老老实实抓包分析，然后伪造请求，改分页参数一次性就可以获取几百条。但是那样的难度上升的层级不止一点半点。有兴趣的可以在评论区讨论。<br><strong>声明：本文仅供学习交流使用，请勿用于商业用途，违者后果自负。</strong></p>
 
                 
             </div>
@@ -689,7 +710,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://localhost:4000/posts/a2d2.html">http://localhost:4000/posts/a2d2.html</a>
+                    <a href="http://localhost:4000/posts/4818.html">http://localhost:4000/posts/4818.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -727,12 +748,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                                    <span class="chip bg-color">设计模式</span>
+                                <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">爬虫</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B7%98%E5%AE%9D/">
+                                    <span class="chip bg-color">淘宝</span>
                                 </a>
                             
                         </div>
@@ -1170,9 +1195,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/4818.html">
                     <div class="card-image">
@@ -1190,9 +1216,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1209,6 +1235,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1232,7 +1259,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/posts/a2d2.html">
@@ -1266,7 +1293,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
