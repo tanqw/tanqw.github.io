@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>爬虫爬取豆瓣电影白蛇评论</title>
+      <link href="/posts/ac3c.html"/>
+      <url>/posts/ac3c.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Python爬虫爬取豆瓣电影评论内容，评论时间和评论人"><a href="#Python爬虫爬取豆瓣电影评论内容，评论时间和评论人" class="headerlink" title="Python爬虫爬取豆瓣电影评论内容，评论时间和评论人"></a>Python爬虫爬取豆瓣电影评论内容，评论时间和评论人</h2><p>我们可以看到影评比较长，需要展开才能完整显示。但是在网页源码中是没有显示完整影评的。所以我们考虑到这部分应该是异步加载的方式显示。所以打开网页的开发者选项，可以看到点击展开之后，多了一条full的网页。这个网页就包含了完整评论。<br>我们观察到全部评论所在的网址为<a href="https://movie.douban.com/j/review/9593388/full">https://movie.douban.com/j/review/9593388/full</a></p><p>获取索引页<a href="https://movie.douban.com/review/best/?start=0%EF%BC%8C%E7%B4%A2%E5%BC%95%E9%A1%B5%E5%8F%AA%E9%9C%80%E8%A6%81%E6%94%B9%E5%8F%98start=0,20,40%E5%8D%B3%E5%8F%AF%E8%AE%BF%E9%97%AE%E4%B8%8B%E4%B8%80%E9%A1%B5">https://movie.douban.com/review/best/?start=0，索引页只需要改变start=0,20,40即可访问下一页</a><br>解析索引页，把索引页中的10个评论的ID获取到<br>通过获取到的ID构建完整评论网址<a href="https://movie.douban.com/j/review/'">https://movie.douban.com/j/review/'</a> + str(id) + ‘/full<br>解析评论页，获取评论者姓名和评论内容，写入txt文件<br>附上源码：</p><pre class="line-numbers language-none"><code class="language-none">import urllib.requestimport recomment = '白蛇.txt'T='&lt;span content=".*?" class=".*?"&gt;.*?&lt;/span&gt;'for i in range(10):    print("获取第"+str(i+1)+"页")    url = "https://movie.douban.com/subject/30331149/reviews?start="+str(i*20)  # 确定要爬取的入口链接     # 模拟成浏览器并爬取对应的网页 谷歌浏览器    headers = {'User-Agent',               'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'}    opener = urllib.request.build_opener()    opener.addheaders = [headers]    data = opener.open(url).read().decode('utf8')    time_pattern = re.compile('&lt;span content=".*?" class=".*?"&gt;(.*?)&lt;/span&gt;', re.S)    time = re.findall(time_pattern, data)    id_pattern= re.compile('&lt;h2&gt;&lt;a href="https://movie.douban.com/review/(.*?)/', re.S)    id= re.findall(id_pattern, data)    for j in range(len(id)):        html = 'https://movie.douban.com/j/review/' + str(id[j]) + '/full'        data = opener.open(html).read().decode('utf8')        html = data        content_pattern = re.compile('data-original(.*?)main-author', re.S)        content = re.findall(content_pattern, html)        text_pattern = re.compile('[\u4e00-\u9fa5|，、“”‘’：！~@#￥【】*（）——+。；？]+', re.S)        text = re.findall(text_pattern, content[0])        text = ''.join(text)        name_pattern = re.compile('data-author=.*?"(.*?)"', re.S)        name = re.findall(name_pattern, html)        with open(comment, 'a', encoding='utf-8-sig') as f:            f.write(name[0].strip('\\') + '\n')            f.write(time[j]+'\n')            f.write(str(text) + '\n')            f.write('\n')            f.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>声明：本文仅供学习交流使用，请勿用于商业用途，违者后果自负。</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 爬虫 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 爬虫 </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> 豆瓣 </tag>
+            
+            <tag> 影评 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>爬虫爬取淘宝商品信息</title>
       <link href="/posts/4818.html"/>
       <url>/posts/4818.html</url>
